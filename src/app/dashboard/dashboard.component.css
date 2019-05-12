@@ -1,0 +1,19 @@
+#logo{
+    align-self: center;
+    justify-self: center;
+    width: 500px;
+}
+
+.mat-toolbar{
+    width: 100%;
+}
+
+.title {
+    font-weight: bold;
+    align-self: center;
+    justify-self: center;
+}
+
+.subheader {
+    font-style: oblique
+}
