@@ -1,4 +1,4 @@
-<span class="resultsCard" *ngFor="let result of results">
-  <div class="name">Name: {{result.name}}</div>
-  <div class="location">Location: {{result.location}}</div>
-</span>
+<ng-container *ngFor="let result of results">
+    <app-result-card [result]="result">
+    </app-result-card>
+</ng-container>
