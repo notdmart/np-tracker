@@ -3,4 +3,5 @@ export interface Result {
     // time: number;
     // date: number;
     location: string;
+    img: string;
 }

@@ -11,12 +11,14 @@ export class ResultService {
     loadAllResults(): Observable<Result[]> {
         const results: Result[] = [
             {
-                name: 'DylnMrty',
+                name: 'Dyln Mrty',
                 location: 'Bascom',
+                img: 'assets/img/dyln.jpg',
             },
             {
-                name: 'KaitDog',
+                name: 'Kait Dog',
                 location: 'Capitol',
+                img: 'assets/img/kait.jpg',
             },
         ];
 
