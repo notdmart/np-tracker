@@ -20,6 +20,26 @@ export class ResultService {
                 location: 'Capitol',
                 img: 'assets/img/kait.jpg',
             },
+            {
+                name: 'Dill',
+                location: 'Monona Terrace',
+                img: 'assets/img/default.png',
+            },
+            {
+                name: 'Benjamin Lesterson',
+                location: 'Capitol',
+                img: 'assets/img/benji.jpg',
+            },
+            {
+                name: 'The Doctor',
+                location: 'Capitol',
+                img: 'assets/img/stephen.jpg',
+            },
+            {
+                name: 'Tater',
+                location: 'Capitol',
+                img: 'assets/img/potato.jpg',
+            },
         ];
 
         return of(results);
