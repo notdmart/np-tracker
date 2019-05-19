@@ -6,6 +6,7 @@ import { ResultService } from './core/result.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialModule } from './material/material.module';
 import { ResultsListComponent } from './results-list/results-list.component';
+import { AddResultComponent } from './shared/add-result/add-result.component';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -25,6 +26,8 @@ import { SharedModule } from './shared/shared.module';
     bootstrap: [
         AppComponent,
     ],
-    bootstrap: [AppComponent]
+    entryComponents: [
+        AddResultComponent,
+    ]
 })
 export class AppModule { }

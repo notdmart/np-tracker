@@ -1,9 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { ResultService } from '../core/result.service';
 import { Result } from '../models/result.model';
+import { AddResultComponent } from '../shared/add-result/add-result.component';
 
 @Component({
     selector: 'app-dashboard',
@@ -13,9 +15,9 @@ import { Result } from '../models/result.model';
 export class DashboardComponent implements OnInit, OnDestroy {
 
     results$: Observable<Result[]>;
-    subscription$: Observable<Result[]>;
 
     constructor(
+        public dialog: MatDialog,
         private resultsService: ResultService,
     ) { }
 
@@ -30,4 +32,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
     }
 
+    addResult() {
+        console.log('Adding new result!');
+        const dialogRef = this.dialog.open(AddResultComponent, {
+            width: '250px',
+        });
+
+        dialogRef.afterClosed().subscribe((result: Result) => {
+            console.log(JSON.stringify(result));
+        });
+    }
 }

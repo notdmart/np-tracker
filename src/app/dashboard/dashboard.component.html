@@ -5,4 +5,7 @@
 <img id="logo" alt="November Project Logo" src="assets/img/City_Tag_Madison.png">
 <ng-container *ngIf="results$ | async as results">
     <app-results-list [results]="results"></app-results-list>
+    <button mat-flat-button (click)="addResult()">
+        <mat-icon>add</mat-icon>
+    </button>
 </ng-container>
