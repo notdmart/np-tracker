@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { distinctUntilChanged, tap } from 'rxjs/operators';
 
 import { Result } from '../models/result.model';
 
 @Injectable()
 export class ResultService {
 
-    constructor() { }
+    private _results: Result[];
+    private results$: Subject<Result[]>;
 
-    loadAllResults(): Observable<Result[]> {
-        const results: Result[] = [
+    constructor() {
+        this._results = [
             {
                 name: 'Dyln Mrty',
                 location: 'Bascom',
@@ -41,8 +43,17 @@ export class ResultService {
                 img: 'assets/img/potato.jpg',
             },
         ];
-
-        return of(results);
+        this.results$ = new BehaviorSubject(this._results);
     }
 
+    loadAllResults(): Observable<Result[]> {
+        return this.results$.pipe(
+            tap(console.log),
+            distinctUntilChanged(),
+        );
+    }
+
+    addNewResult(result: Result): void {
+        this._results.push(result);
+    }
 }

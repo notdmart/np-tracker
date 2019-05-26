@@ -21,6 +21,5 @@ export class AddResultComponent implements OnInit {
         };
     }
 
-    ngOnInit() {
-    }
+    ngOnInit() { }
 }

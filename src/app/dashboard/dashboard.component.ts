@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { first, tap } from 'rxjs/operators';
 
 import { ResultService } from '../core/result.service';
 import { Result } from '../models/result.model';
@@ -38,8 +38,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
             width: '250px',
         });
 
-        dialogRef.afterClosed().subscribe((result: Result) => {
+        dialogRef.afterClosed().pipe(
+            first()
+        ).subscribe((result: Result) => {
             console.log(JSON.stringify(result));
+            this.resultsService.addNewResult(result);
         });
     }
 }

@@ -1,5 +1,5 @@
-- Add new results via form
-- Figure out a better way to handle updates to the results array. Likely with subject instead of observable?
+- Time
+- Form formatting
 - PR icon
 - NP-corporate-approved styling
 - Handle images better
