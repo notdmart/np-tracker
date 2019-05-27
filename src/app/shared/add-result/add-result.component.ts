@@ -18,6 +18,7 @@ export class AddResultComponent implements OnInit {
         this.newResult = {
             name: '',
             location: '',
+            img: 'assets/img/default.png',
         };
     }
 

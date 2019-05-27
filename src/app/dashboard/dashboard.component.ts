@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs';
-import { first, tap } from 'rxjs/operators';
+import { first } from 'rxjs/operators';
 
 import { ResultService } from '../core/result.service';
 import { Result } from '../models/result.model';
@@ -23,9 +23,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         if (!this.results$) {
-            this.results$ = this.resultsService.loadAllResults().pipe(
-                tap(console.log)
-            );
+            this.results$ = this.resultsService.loadAllResults();
         }
     }
 

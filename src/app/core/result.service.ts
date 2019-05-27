@@ -51,8 +51,8 @@ export class ResultService {
 
     loadAllResults(): Observable<Result[]> {
         return this.results$.pipe(
-            tap(console.log),
             distinctUntilChanged(),
+            tap(console.log),
         );
     }
 
