@@ -1,4 +1,3 @@
-- Time
 - Form formatting
 - PR icon
 - NP-corporate-approved styling

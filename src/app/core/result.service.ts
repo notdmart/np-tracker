@@ -16,11 +16,13 @@ export class ResultService {
                 name: 'Dyln Mrty',
                 location: 'Bascom',
                 img: 'assets/img/dyln.jpg',
+                time: 123,
             },
             {
                 name: 'Kait Dog',
                 location: 'Capitol',
                 img: 'assets/img/kait.jpg',
+                time: 45,
             },
             {
                 name: 'Dill',
@@ -36,6 +38,7 @@ export class ResultService {
                 name: 'The Doctor',
                 location: 'Capitol',
                 img: 'assets/img/stephen.jpg',
+                time: 12345,
             },
             {
                 name: 'Tater',

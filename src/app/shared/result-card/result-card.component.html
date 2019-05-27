@@ -2,6 +2,6 @@
     <mat-card-header>
         <img *ngIf="result.img" mat-card-avatar src="{{result.img}}">
         <mat-card-title>{{result.name}}</mat-card-title>
-        <mat-card-subtitle>{{result.location}}</mat-card-subtitle>
+        <mat-card-subtitle>{{result.time | hhmmss }}</mat-card-subtitle>
     </mat-card-header>
 </mat-card>
