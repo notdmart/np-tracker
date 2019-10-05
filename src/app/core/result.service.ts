@@ -1,0 +1,62 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { distinctUntilChanged, tap } from 'rxjs/operators';
+
+import { Result } from '../models/result.model';
+
+@Injectable()
+export class ResultService {
+
+    private _results: Result[];
+    private results$: Subject<Result[]>;
+
+    constructor() {
+        this._results = [
+            {
+                name: 'Dyln Mrty',
+                location: 'Bascom',
+                img: 'assets/img/dyln.jpg',
+                time: 123,
+            },
+            {
+                name: 'Kait Dog',
+                location: 'Capitol',
+                img: 'assets/img/kait.jpg',
+                time: 45,
+            },
+            {
+                name: 'Dill',
+                location: 'Monona Terrace',
+                img: 'assets/img/default.png',
+            },
+            {
+                name: 'Benjamin Lesterson',
+                location: 'Capitol',
+                img: 'assets/img/benji.jpg',
+            },
+            {
+                name: 'The Doctor',
+                location: 'Capitol',
+                img: 'assets/img/stephen.jpg',
+                time: 12345,
+            },
+            {
+                name: 'Tater',
+                location: 'Capitol',
+                img: 'assets/img/potato.jpg',
+            },
+        ];
+        this.results$ = new BehaviorSubject(this._results);
+    }
+
+    loadAllResults(): Observable<Result[]> {
+        return this.results$.pipe(
+            distinctUntilChanged(),
+            tap(console.log),
+        );
+    }
+
+    addNewResult(result: Result): void {
+        this._results.push(result);
+    }
+}

@@ -1,0 +1,25 @@
+<h3 mat-dialog-title>Add new result</h3>
+<mat-dialog-content>
+    <div id="addForm">
+        <div>
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput #name="ngModel" [(ngModel)]="newResult.name">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>Location</mat-label>
+                <mat-select #location="ngModel" [(ngModel)]="newResult.location">
+                    <mat-option value="Bascom">Bascom</mat-option>
+                    <mat-option value="Capitol">Capitol</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="newResult">Save</button>
+</mat-dialog-actions>
